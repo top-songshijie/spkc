@@ -1,0 +1,31 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>用户信息</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('AdminUser/editPost')}">
+    	<!-- <form method="post" class="form-horizontal margin-top-20" action="{:url('AdminUser/editPost')}"> -->
+
+        <div class="form-group">
+            <label for="input-coin" class="col-sm-2 control-label">会员到期时间</label>
+            <div class="col-md-6 col-sm-10">
+                <input class="form-control js-bootstrap-datetime" type="text" name="member_time" value="{$info.member_time}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="id" value="{$info.id}">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+                <!-- <a class="btn btn-default" href="{:url('AdminUserAction/index')}">{:lang('BACK')}</a> -->
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+
+</body>
+</html>

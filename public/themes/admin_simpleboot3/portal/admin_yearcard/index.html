@@ -1,0 +1,36 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>会员价格</a></li>
+    </ul>
+    <div class="row margin-top-20">
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('AdminYearcard/edit_post')}" method="post">
+            <!-- <form action="{:url('AdminYearcard/edit_post')}" method="post"> -->
+                <div class="tab-content">
+                    <div class="tab-pane active">
+
+                        <div class="form-group">
+                            <label for="input-name"><span class="form-required">*</span>会员价格</label>
+                            <div>
+                            	<input type="hidden" name="id" value="{$info.id}">
+                                <input type="number" class="form-control" id="input-name" name="price" value="{$info.price}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary js-ajax-submit">确定</button>
+                    <!-- <button type="submit" class="btn btn-primary">确定</button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

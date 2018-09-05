@@ -1,0 +1,40 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a>所有评论</a></li>
+		</ul>
+		<form method="post" class="js-ajax-form" action="{:url('AdminCate/listOrder')}">
+			<div class="table-actions"></div>
+			<table class="table table-hover table-bordered table-list">
+				
+				<tr>
+					<th width="50">ID</th>
+					<th width="80">用户uid</th>
+					<th width="100">用户昵称</th>
+					<th width="100">用户头像</th>
+					<th>评论内容</th>
+					<th width="80">操作</th>
+				</tr>
+				
+				<volist name="list" id="vo">
+					<tr>
+						<th>{$vo.id}</th>
+						<th>{$vo.user_id}</th>
+						<th>{$vo.user_nickname}</th>
+						<th><img src="{$vo.avatar}" width="50px;"></th>
+						<th>{$vo.content}</th>
+						<th>
+							<a href="{:url('AdminComment/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">删除</a>
+						</th>
+					</tr>
+				</volist>
+
+			</table>
+
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
